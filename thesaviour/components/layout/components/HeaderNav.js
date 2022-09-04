@@ -1,21 +1,21 @@
 import styled from 'styled-components';
-// import { useRouter } from 'next/router';
-// import Link from 'next/link';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 const HeaderNav = () => {
-//   const Router = useRouter();
+  const Router = useRouter();
 
   return (
     <HeaderNavWrapper>
-        <HeaderNavLinks>
-            Campaigns
-        </HeaderNavLinks>
-        <HeaderNavLinks>
-            Create Campaigns
-        </HeaderNavLinks>
-        <HeaderNavLinks>
-            Dashboard
-        </HeaderNavLinks>
+      <Link/*passHref</HeaderNavWrapper> */href={'/'}><HeaderNavLinks active={Router.pathname == "/" ? true : false} >
+        Campaigns
+      </HeaderNavLinks></Link>
+      <Link /*passHref*/href={'/createcampaign'}><HeaderNavLinks active={Router.pathname == "/createcampaign" ? true : false} >
+        Create Campaign
+      </HeaderNavLinks></Link>
+      <Link /*passHref*/href={'/dashboard'}><HeaderNavLinks active={Router.pathname == "/dashboard" ? true : false} >
+        Dashboard
+      </HeaderNavLinks></Link>
     </HeaderNavWrapper>
   )
 }
