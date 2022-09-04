@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-// import { FormState } from '../Form';
-// import { useState, useContext } from 'react';
+import { FormState } from '../Form';
+import { useState, useContext } from 'react';
 // import { toast } from 'react-toastify';
 // import {TailSpin} from 'react-loader-spinner'
 // import {create as IPFSHTTPClient} from 'ipfs-http-client';
@@ -19,7 +19,7 @@ const client = IPFSHTTPClient({
 })
 */
 const FormRightWrapper = () => {
- /* const Handler = useContext(FormState);
+  const Handler = useContext(FormState);
 
   const [uploadLoading, setUploadLoading] = useState(false);
   const [uploaded, setUploaded] = useState(false);
@@ -52,18 +52,18 @@ const FormRightWrapper = () => {
       Handler.setUploaded(true);
       toast.success("Files Uploaded Sucessfully")
 }
-*/
+
   return (
     <FormRight>
       <FormInput>
         <FormRow>
           <RowFirstInput>
             <label>Required Amount</label>
-            <Input /*onChange={Handler.FormHandler} value={Handler.form.requiredAmount} name="requiredAmount"*/ type={'number'} placeholder='Required Amount'></Input>
+            <Input onChange={Handler.FormHandler} value={Handler.form.requiredAmount} name="requiredAmount" type={'number'} placeholder='Required Amount'></Input>
           </RowFirstInput>
           <RowSecondInput>
             <label>Choose Category</label>
-            <Select/* onChange={Handler.FormHandler} value={Handler.form.category} name="category"*/>
+            <Select onChange={Handler.FormHandler} value={Handler.form.category} name="category">
               <option>Education</option>
               <option>Health</option>
               <option>Animal</option>
@@ -74,7 +74,7 @@ const FormRightWrapper = () => {
       {/* Image */}
       <FormInput>
         <label>Select Image</label>
-        <Image /*alt="dapp" onChange={Handler.ImageHandler} */type={'file'} accept='image/*'>
+        <Image /*alt="dapp"*/ onChange={Handler.ImageHandler} type={'file'} accept='image/*'>
         </Image>
       </FormInput>
       {/* {uploadLoading == true ? <Button><TailSpin color='#fff' height={20} /></Button> : */}

@@ -1,29 +1,29 @@
 import styled from 'styled-components';
 import FormLeftWrapper from './Components/FormLeftWrapper'
 import FormRightWrapper from './Components/FormRightWrapper'
-// import { createContext, useState } from 'react';
+import { createContext, useState } from 'react';
 // import {TailSpin} from 'react-loader-spinner';
 // import {ethers} from 'ethers';
 // import {toast} from 'react-toastify';
 // import CampaignFactory from '../../artifacts/contracts/Campaign.sol/CampaignFactory.json'
 
-// const FormState = createContext();
+const FormState = createContext();
 
 const Form = () => {
- /*   const [form, setForm] = useState({
+    const [form, setForm] = useState({
         campaignTitle: "",
         story: "",
         requiredAmount: "",
         category: "education",
     });
-
+/*
     const [loading, setLoading] = useState(false);
     const [address, setAddress] = useState("");
     const [uploaded, setUploaded] = useState(false);
 
     const [storyUrl, setStoryUrl] = useState();
     const [imageUrl, setImageUrl] = useState();
-
+*/
     const FormHandler = (e) => {
         setForm({
             ...form,
@@ -36,7 +36,7 @@ const Form = () => {
     const ImageHandler = (e) => {
         setImage(e.target.files[0]);
     }
-
+/*
     const startCampaign = async (e) => {
         e.preventDefault();
         const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -77,7 +77,7 @@ const Form = () => {
     }
 */
   return (
-    //   <FormState.Provider value={{form, setForm, image, setImage, ImageHandler, FormHandler, setImageUrl, setStoryUrl, startCampaign, setUploaded}} >
+      <FormState.Provider value={{form, setForm, image, setImage, ImageHandler, FormHandler/*, setImageUrl, setStoryUrl, startCampaign, setUploaded*/}} >
     <FormWrapper>
         <FormMain>
             {/* {loading == true ? */}
@@ -100,7 +100,7 @@ const Form = () => {
             {/* } */}
         </FormMain>
     </FormWrapper>
-    // </FormState.Provider>
+     </FormState.Provider>
   )
 }
 
@@ -155,4 +155,4 @@ const Button = styled.button`
 `
 */
 export default Form;
-// export {FormState};
+export {FormState};
