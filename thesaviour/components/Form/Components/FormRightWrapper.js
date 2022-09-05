@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import { FormState } from '../Form';
 import { useState, useContext } from 'react';
-// import { toast } from 'react-toastify';
-// import {TailSpin} from 'react-loader-spinner'
-// import {create as IPFSHTTPClient} from 'ipfs-http-client';
-/*
-const projectId = '2DfVAn21Qsjaiyf6vPsOb1H0M8b'
-const projectSecret = '1850a3ce8d231c928e64c01e31b6553f'
+import { toast } from 'react-toastify';
+import {TailSpin} from 'react-loader-spinner'
+import {create as IPFSHTTPClient} from 'ipfs-http-client';
+
+const projectId = '2ELeG3CnMOPf3Y292viTkPaGHrt'
+const projectSecret = '798c3a2479240fcc0fd7ad7e6126642f'
 const auth = 'Basic ' + Buffer.from(projectId + ":" + projectSecret).toString('base64')
 
 const client = IPFSHTTPClient({
@@ -17,7 +17,7 @@ const client = IPFSHTTPClient({
     authorization: auth
   }
 })
-*/
+
 const FormRightWrapper = () => {
   const Handler = useContext(FormState);
 
@@ -77,14 +77,14 @@ const FormRightWrapper = () => {
         <Image /*alt="dapp"*/ onChange={Handler.ImageHandler} type={'file'} accept='image/*'>
         </Image>
       </FormInput>
-      {/* {uploadLoading == true ? <Button><TailSpin color='#fff' height={20} /></Button> : */}
-        {/* uploaded == false ?  */}
-        <Button /*onClick={uploadFiles}*/>
+      {uploadLoading == true ? <Button><TailSpin color='#fff' height={20} /></Button> :
+        uploaded == false ? 
+        <Button onClick={uploadFiles}>
           Upload Files to IPFS
         </Button>
-        {/* : <Button style={{cursor: "no-drop"}}>Files uploaded Sucessfully</Button> */}
-      {/* } */}
-      <Button /*onClick={Handler.startCampaign}*/>
+         : <Button style={{cursor: "no-drop"}}>Files uploaded Sucessfully</Button> 
+      }
+      <Button onClick={Handler.startCampaign}>
         Start Campaign
       </Button>
     </FormRight>

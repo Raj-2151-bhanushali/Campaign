@@ -2,10 +2,10 @@ import styled from 'styled-components';
 import FormLeftWrapper from './Components/FormLeftWrapper'
 import FormRightWrapper from './Components/FormRightWrapper'
 import { createContext, useState } from 'react';
-// import {TailSpin} from 'react-loader-spinner';
-// import {ethers} from 'ethers';
-// import {toast} from 'react-toastify';
-// import CampaignFactory from '../../artifacts/contracts/Campaign.sol/CampaignFactory.json'
+import {TailSpin} from 'react-loader-spinner';
+import {ethers} from 'ethers';
+import {toast} from 'react-toastify';
+import CampaignFactory from '../../artifacts/contracts/Campaign.sol/CampaignFactory.json'
 
 const FormState = createContext();
 
@@ -16,14 +16,14 @@ const Form = () => {
         requiredAmount: "",
         category: "education",
     });
-/*
+
     const [loading, setLoading] = useState(false);
     const [address, setAddress] = useState("");
     const [uploaded, setUploaded] = useState(false);
 
     const [storyUrl, setStoryUrl] = useState();
     const [imageUrl, setImageUrl] = useState();
-*/
+
     const FormHandler = (e) => {
         setForm({
             ...form,
@@ -36,7 +36,7 @@ const Form = () => {
     const ImageHandler = (e) => {
         setImage(e.target.files[0]);
     }
-/*
+
     const startCampaign = async (e) => {
         e.preventDefault();
         const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -75,29 +75,29 @@ const Form = () => {
           setAddress(campaignData.to);
         }
     }
-*/
+
   return (
-      <FormState.Provider value={{form, setForm, image, setImage, ImageHandler, FormHandler/*, setImageUrl, setStoryUrl, startCampaign, setUploaded*/}} >
+      <FormState.Provider value={{form, setForm, image, setImage, ImageHandler, FormHandler, setImageUrl, setStoryUrl, startCampaign, setUploaded}} >
     <FormWrapper>
         <FormMain>
-            {/* {loading == true ? */}
-                {/* address == "" ? */}
-                    {/* <Spinner> */}
-                        {/* <TailSpin height={60} /> */}
-                    {/* </Spinner> : */}
-                {/* <Address> */}
-                    {/* <h1>Campagin Started Sucessfully!</h1> */}
-                    {/* <h1>{address}</h1> */}
-                    {/* <Button> */}
-                        {/* Go To Campaign */}
-                    {/* </Button> */}
-                {/* </Address> */}
-                {/* : */}
+            {loading == true ?
+                address == "" ?
+                    <Spinner>
+                        <TailSpin height={60} />
+                    </Spinner> :
+                <Address>
+                    <h1>Campagin Started Sucessfully!</h1>
+                    <h1>{address}</h1>
+                    <Button>
+                        Go To Campaign
+                    </Button>
+                </Address>
+                :
                     <FormInputsWrapper>
                         <FormLeftWrapper />
                         <FormRightWrapper />
                     </FormInputsWrapper>               
-            {/* } */}
+            }
         </FormMain>
     </FormWrapper>
      </FormState.Provider>
@@ -119,7 +119,7 @@ const FormInputsWrapper = styled.div`
     justify-content:space-between ;
     margin-top:45px ;
 `
-/*
+
 const Spinner = styled.div`
     width:100%;
     height:80vh;
@@ -127,6 +127,7 @@ const Spinner = styled.div`
     justify-content:center ;
     align-items:center ;
 `
+
 const Address = styled.div`
     width:100%;
     height:80vh;
@@ -153,6 +154,6 @@ const Button = styled.button`
   font-weight:bold ;
   font-size:large ;
 `
-*/
+
 export default Form;
 export {FormState};
