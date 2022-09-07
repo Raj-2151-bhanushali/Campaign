@@ -74,7 +74,7 @@ const FormRightWrapper = () => {
       {/* Image */}
       <FormInput>
         <label>Select Image</label>
-        <Image /*alt="dapp"*/ onChange={Handler.ImageHandler} type={'file'} accept='image/*'>
+        <Image alt="dapp" onChange={Handler.ImageHandler} type={'file'} accept='image/*'>
         </Image>
       </FormInput>
       {uploadLoading == true ? <Button><TailSpin color='#fff' height={20} /></Button> :

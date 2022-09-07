@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { ethers } from 'ethers';
 import CampaignFactory from '../artifacts/contracts/Campaign.sol/CampaignFactory.json'
 import { useState } from 'react';
-// import Link from 'next/link'
+import Link from 'next/link'
 
 export default function Index({AllData, HealthData, EducationData,AnimalData}) {
   const [filter, setFilter] = useState(AllData);
@@ -33,7 +33,7 @@ export default function Index({AllData, HealthData, EducationData,AnimalData}) {
           <Card key={e.title}>
           <CardImg>
             <Image 
-              // alt="Crowdfunding dapp"
+              alt="Crowdfunding dapp"
               layout='fill' 
               src={"https://crowd-funding.infura-ipfs.io/ipfs/" + e.image} 
             />
@@ -53,11 +53,11 @@ export default function Index({AllData, HealthData, EducationData,AnimalData}) {
             <Text><EventIcon /></Text>
             <Text>{new Date(e.timeStamp * 1000).toLocaleString()}</Text>
           </CardData>
-          {/* <Link passHref href={'/' + e.address}> */}
+          <Link passHref href={'/' + e.address}>
           <Button>
             Go to Campaign
           </Button>
-          {/* </Link> */}
+          </Link>
         </Card>
         )
       })}

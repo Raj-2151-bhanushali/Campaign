@@ -77,7 +77,7 @@ export default function Detail({Data, DonationsData}) {
       <LeftContainer>
         <ImageSection>
           <Image
-            // alt="crowdfunding dapp"
+            alt="crowdfunding dapp"
             layout="fill"
             src={
               "https://crowd-funding.infura-ipfs.io/ipfs/" + Data.image
