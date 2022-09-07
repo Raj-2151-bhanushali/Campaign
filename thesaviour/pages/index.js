@@ -90,7 +90,7 @@ export async function getStaticProps() {
       owner: e.args.owner,
       timeStamp: parseInt(e.args.timestamp),
       amount: ethers.utils.formatEther(e.args.requiredAmount),
-      // address: e.args.campaignAddress
+      address: e.args.campaignAddress
     }
   });
 
@@ -103,7 +103,7 @@ export async function getStaticProps() {
       owner: e.args.owner,
       timeStamp: parseInt(e.args.timestamp),
       amount: ethers.utils.formatEther(e.args.requiredAmount),
-      // address: e.args.campaignAddress
+      address: e.args.campaignAddress
     }
   });
 
@@ -116,7 +116,7 @@ export async function getStaticProps() {
       owner: e.args.owner,
       timeStamp: parseInt(e.args.timestamp),
       amount: ethers.utils.formatEther(e.args.requiredAmount),
-      // address: e.args.campaignAddress
+      address: e.args.campaignAddress
     }
   });
 
@@ -129,7 +129,7 @@ export async function getStaticProps() {
       owner: e.args.owner,
       timeStamp: parseInt(e.args.timestamp),
       amount: ethers.utils.formatEther(e.args.requiredAmount),
-      // address: e.args.campaignAddress
+      address: e.args.campaignAddress
     }
   });
 
