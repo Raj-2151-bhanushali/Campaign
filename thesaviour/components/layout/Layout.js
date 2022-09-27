@@ -24,7 +24,7 @@ const Layout = ({ children }) => {
           {children}
         </LayoutWrapper>
       </ThemeProvider>
-    // </App.Provider>
+    </App.Provider>
   );
 }
 
